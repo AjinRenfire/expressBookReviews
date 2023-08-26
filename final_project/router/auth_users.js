@@ -35,7 +35,7 @@ regd_users.post("/login", (req, res) => {
 
     if (authenticatedUser(username, password)) {
         let token = jwt.sign(username, secret);
-        res.json({ token: token });
+        res.json({ msg: "logged in ", token: token });
     }
     return res.status(401).json({ message: "some error occured" });
 });
